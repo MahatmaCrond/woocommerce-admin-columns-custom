@@ -111,8 +111,7 @@ class Order extends AC\Settings\Column
 		}
 
 		$order_number = ac_helper()->html->link( get_edit_post_link( $order_id ), '#' . $order->get_order_number() );
-
-		return sprintf( '%s - %s', $order_number, $order->get_formatted_order_total() );
+		return sprintf( '%s | %s', $order_number, $value = $order->get_date_created()->format ('Y-m-d') );
 	}
 
 }
